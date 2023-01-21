@@ -1,0 +1,347 @@
+$(init);
+var toutmarker = false;
+var lesmonuments = [];
+var monuments = [
+    {
+    nom: "Statue de la Liberte",
+    lieu: "USA",
+    taille: "93 mètre",
+    coordonnees : [40.689249,-74.044500]
+    },
+    {
+        nom : "Muraille de Chine",
+        lieu: "Chine",
+        taille: "21 196 km",
+        coordonnees : [35.861660,104.195397]
+    },
+    {
+        nom : "Sagrada Familia",
+        lieu: "Espagne",
+        taille: "172 mètre",
+        coordonnees : [41.403630,2.174356]
+    },
+    {
+        nom : "Pyramide de Gizeh",
+        lieu: "Egypte",
+        taille: "139 mètre",
+        coordonnees : [29.977296,31.132496]
+    },
+    {
+        nom : "Christ Rédempteur",
+        lieu: "Brésil",
+        taille: "38 mètre",
+        coordonnees : [-22.952318,-43.212093]
+    },
+    {
+        nom : "Tour de Pise",
+        lieu: "Italie",
+        taille: "57 mètre",
+        coordonnees : [43.724591,10.382981]
+    },
+    {
+        nom : "Tour Eiffel",
+        lieu: "France",
+        taille: "343 mètre",
+        coordonnees : [48.858370, 2.294481]
+    },
+    {
+        nom : "Taj Mahal",
+        lieu: "Inde",
+        taille: "73 mètre",
+        coordonnees : [27.175015, 78.042155]
+    },
+    {
+        nom : "Macchu Picchu",
+        lieu: "Pérou",
+        taille: "2430 mètre",
+        coordonnees : [-13.163141, -72.544963]
+    },
+    {
+        nom : "Le temple d’Angkor Wat",
+        lieu: "Cambodge",
+        taille: "163 ha",
+        coordonnees : [13.412469, 103.866986]
+    },
+    {
+        nom : "Opéra Sydney",
+        lieu: "Australie",
+        taille: "65 mètre",
+        coordonnees : [-33.858317, 151.214726]
+    },
+    {
+        nom : "Lincoln Memorial",
+        lieu: "USA",
+        taille: "30 mètre",
+        coordonnees : [38.889270,-77.048960]
+    },
+    {
+        nom : "Ancienne Ville Maya",
+        lieu: "Mexique",
+        taille: "3000 hectares",
+        coordonnees : [30.053001, -83.174858]
+    },
+    {
+        nom : "Notre-Dame de Paris",
+        lieu: "France",
+        taille: "35 mètre",
+        coordonnees : [48.852968, 2.349902]
+    },
+    {
+        nom : "Collisée",
+        lieu: "Italie",
+        taille: "48 mètre",
+        coordonnees : [41.890210, 12.492231]
+    },
+    {
+        nom : "Pont Charles",
+        lieu: "République Tcheque",
+        taille: "516 mètre",
+        coordonnees : [50.086430, 14.411210]
+    },
+    {
+        nom : "Chichen Itza",
+        lieu: "Mexique",
+        taille: "24 mètre",
+        coordonnees : [20.679300,-88.570800]
+    },
+    {
+        nom : "Big Ben",
+        lieu: "Angleterre",
+        taille: "106 mètre",
+        coordonnees : [51.500729, -0.124625]
+    },
+    {
+        nom : "Burj Khalifa",
+        lieu: "Dubai",
+        taille: "828 mètre",
+        coordonnees : [25.197197,55.274376]
+    },
+    {
+        nom : "Empire State Building",
+        lieu: "New York",
+        taille: "381 mètre",
+        coordonnees : [40.748441, -73.985664]
+    },
+    {
+        nom : "Times Square",
+        lieu: "New York",
+        taille: "111 mètre",
+        coordonnees : [40.758888, -73.985197]
+    },
+    {
+        nom : "Maison Blanche",
+        lieu: "Washinton",
+        taille: "21 mètre",
+        coordonnees : [38.8976997, -77.0365]
+    },
+    {
+        nom : "Arc de Triomphe",
+        lieu: "France",
+        taille: "50 mètre",
+        coordonnees : [48.873792, 2.295028]
+    },
+    {
+        nom : "Place Rouge",
+        lieu: "Moscou",
+        taille: "700 mètre de long",
+        coordonnees : [55.757425, 37.619183]
+    },
+    {
+        nom : "Mont Fuji",
+        lieu: "Tokyo",
+        taille: "3776 mètre",
+        coordonnees : [35.362540, 138.730710]
+    },
+    {
+        nom : "Buckingham Palace",
+        lieu: "Londre",
+        taille: "24 mètre",
+        coordonnees : [51.501476, -0.140634]
+    },
+    {
+        nom : "Mont Rushmore",
+        lieu: "USA",
+        taille: "1745 mètre",
+        coordonnees : [43.6194097, -95.8005713]
+    },
+    {
+        nom : "Sphinx de Gizeh",
+        lieu: "Egypte",
+        taille: "20 mètre",
+        coordonnees : [29.97527, 31.13757]
+    },
+    {
+        nom : "Sacré Coeur",
+        lieu: "Paris",
+        taille: "83 mètre",
+        coordonnees : [48.886143, 2.343124]
+    },
+    {
+        nom : "Tour d'Afrique ",
+        lieu: "Mali",
+        taille: "46 mètre",
+        coordonnees : [12.58528252171014, -7.942982823279482]
+    },
+    {
+        nom : "Montagne de la Table",
+        lieu: "Le Cap",
+        taille: "1086 mètre",
+        coordonnees : [-33.960616167792644, 18.408774786988452]
+    },
+]
+
+function init(){
+    map = L.map('map').setView([48.84169080236788, 2.2686434551720724], 2);
+    osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    
+    $("#affiche").on("click",afficherSurTouteCarte);
+    
+    $("#ajouter").on("click",addMonument);
+    $("#retirer").on("click",RetireSurTouteCarte);
+    $("#valider").on("click",afficherSurCarte);
+
+
+// extension qui permet la recherche d'adresses et de places 
+    const searchControl = L.esri.Geocoding.geosearch().addTo(map);
+
+      const results = L.layerGroup().addTo(map);
+
+      let markers = [];
+
+      searchControl.on("results", function (data) {
+        markers = [];
+        console.log("data", data);
+        results.clearLayers();
+
+        for (var i = data.results.length - 1; i >= 0; i--) {
+          const result = data.results[i];
+          const marker = L.marker(result.latlng).bindPopup("Résultat de la recherche :"+ " " + result.text);
+          markers = [...markers, L.marker(marker)];
+          results.addLayer(marker);
+          console.log("markers", markers);
+        }
+      });
+
+const mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+const mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw';
+const streets = L.tileLayer(mbUrl, {id: 'mapbox/streets-v11', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+const navigationday = L.tileLayer(mbUrl, {id: 'mapbox/navigation-day-v1', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+
+
+    
+
+
+const baseLayers = {
+    'OpenStreetMap': osm,
+    'Streets': streets,
+    'Navigation Day': navigationday
+
+};
+
+const layerControl = L.control.layers(baseLayers).addTo(map);
+const satellite = L.tileLayer(mbUrl, {id: 'mapbox/satellite-v9', tileSize: 512, zoomOffset: -1, attribution: mbAttr});
+layerControl.addBaseLayer(satellite, 'Satellite');
+
+}
+
+function afficherSurCarte(){
+    
+	
+   var nomM = $("#cp").val();
+    monuments.forEach(nom => {
+        if(nom.nom===nomM){
+            map.flyTo([nom.coordonnees[0],nom.coordonnees[1]],13);
+            L.marker().setLatLng([nom.coordonnees[0],nom.coordonnees[1]])
+                .bindPopup(nom.nom +"<br/> Taille :" +nom.taille +" "+ "<br/> Lieu:" 
+                + " " +nom.lieu +"<br/> Coordonnées :" +" "+nom.coordonnees).addTo(map)
+                .openPopup();
+        }
+    });
+}
+
+function afficherSurTouteCarte(){
+    if (toutmarker == false) {
+    monuments.forEach(nom => {
+       var markerrs = L.marker().setLatLng([nom.coordonnees[0],nom.coordonnees[1]])
+                .bindPopup(nom.nom +"<br/> Taille :" +nom.taille +" "+ "<br/> Lieu:" 
+                + " " +nom.lieu +"<br/> Coordonnées :" +" "+nom.coordonnees).addTo(map);
+        lesmonuments.push(markerrs);
+    });
+    toutmarker = true;
+    }
+}
+
+function RetireSurTouteCarte(){
+    for(var i = 0; i < lesmonuments.length ; i++){
+       // console.log(lesmonuments[i]);
+       
+       map.removeLayer(lesmonuments[i]);
+    }
+    toutmarker = false;
+}
+
+function openForm() {
+    document.getElementById("myForm").style.display= "block";
+    document.getElementById("open-button").style.display= "none";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display= "none";
+    document.getElementById("open-button").style.display= "block";
+}
+
+function addMonument () {
+    var nommonument = $("#monument").val();
+    var taille = $("#taille").val();
+    var commentaires = $("#avis").val();
+    var coordonneeslong = $("#lat").val();
+    var coordonneeslat = $("#lot").val();
+    var lieu = $("#lieu").val();
+
+
+    var markerr = L.marker().setLatLng([coordonneeslat, coordonneeslong])
+                .bindPopup(nommonument +"<br/> Taille :" +taille +" "+ "<br/> Lieu:" 
+                + " " +lieu +"<br/> Commentaire :" +" "+commentaires).addTo(map).openPopup();
+                lesmonuments.push(markerr);
+
+
+}
+// calcul d'itinéraire
+function go() {
+    var lyrMaps = L.geoportalLayer.WMTS({
+        layer: "GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2",
+    }, {
+        opacity: 0.7
+    });
+   
+    var routeCtrl = L.geoportalControl.Route({
+    });
+    map.addControl(routeCtrl);
+
+}
+
+Gp.Services.getConfig({
+    apiKey : "cartes,calcul",
+    onSuccess : go
+}) ;
+
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "s30zo9eo"
+      }], "*")
+    }
+    window.name = "result"
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,249 @@
+html, body {
+    margin-left: -12%;
+
+}
+
+h1{
+    text-align: center;
+
+}
+
+.monuments{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px 80px;
+
+}
+
+
+
+#m1{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#B24C63,#9B4782);
+    color: white;
+}
+
+#m2{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#9B4782,#8342A0);
+    color: white;
+}
+
+#m3{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#8342A0,#5438DC);
+    color: white;
+}
+
+#m4{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#5438DC,#455BE5);
+    color: white;
+}
+
+#m5{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#455BE5,#357DED);
+    color: white;
+}
+
+#m6{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#357DED,#46B6F1);
+    color: white;
+}
+
+#m7{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#46B6F1,#56EEF4);
+    color: white;
+}
+
+#m8{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#56EEF4,#44EBB5);
+    color: white;
+}
+
+#m9{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#44EBB5,#32E875);
+    color: white;
+}
+
+#m10{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#32E875,#45AD83);
+    color: white;
+}
+
+#m11{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#45AD83,#4F908A);
+    color: white;
+}
+#m12{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#4F908A,#54818E);
+    color: white;
+}
+#m13{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#54818E,#587291);
+    color: white;
+}
+#m14{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#587291,#4485A9);
+    color: white;
+}
+#m15{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#4485A9,#2F97C1);
+    color: white;
+}
+#m16{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#2F97C1,#1CCAD8);
+    color: white;
+}
+#m17{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#1CCAD8,#80D1E5);
+    color: white;
+}
+#m18{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#80D1E5,#E3D8F1);
+    color: white;
+}
+
+#m19{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#E3D8F1,#9D90BC);
+    color: white;
+}
+#m20{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#9D90BC,#564787);
+    color: white;
+}
+#m21{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#564787,#33305E);
+    color: white;
+}
+#m22{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#33305E,#394561);
+    color: white;
+}
+#m23{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#394561,#3E5A63);
+    color: white;
+}
+#m24{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#3E5A63,#498467);
+    color: white;
+}
+#m25{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#498467,#4E9E78);
+    color: white;
+}
+#m26{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#4E9E78,#52B788);
+    color: white;
+}
+#m27{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#52B788,#2D8370);
+    color: white;
+}
+#m28{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#2D8370,#074F57);
+    color: white;
+}
+#m29{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#074F57,#07606F);
+    color: white;
+}
+#m30{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#07606F,#077187);
+    color: white;
+}
+#m31{
+    border-radius: 5px;
+    border: solid black 1px;
+    padding: 3px;
+    background: linear-gradient(to right,#077187,#1E7E92);
+    color: white;
+}
